@@ -2,3 +2,6 @@ bin/
 *.elf
 *.bin
 generated.*.ld
+
+# Clang
+.clang-complete
