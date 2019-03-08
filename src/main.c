@@ -18,6 +18,7 @@ enum Code {
 	IR_WHITE = 0x07,
 	IR_SCARLET = 0x08,
 	IR_LIGHTGREEN = 0x09,
+  IR_SHITTYBLUE = 0x0A,
 	IR_FLASH = 0x0B,
 	IR_ORANGE = 0x0C,
 	IR_MINT = 0x0D,
@@ -83,13 +84,14 @@ int main(void)
 
   const uint16_t address = 0xEF00;
 	while (1) {
-		/* uint16_t data = 0; */
-		/* while (!(data = usart_recv_blocking(USART1))) */
-		/* 	; */
-		for (int i = 0; i < 3; i++) {
-			nec_send(&handle, address, IR_OFF);
-			delay_ms(100);
-		}
+		uint16_t data = 0;
+		while (!(data = usart_recv_blocking(USART1)))
+			;
+    nec_send(&handle, address, data - '0');
+		/* for (int i = 0; i < 3; i++) { */
+		/* 	nec_send(&handle, address, data - '0'); */
+		/* 	delay_ms(100); */
+		/* } */
     gpio_set(GPIOC, GPIO9);
 	}
 
