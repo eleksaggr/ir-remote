@@ -24,6 +24,7 @@ I found the controller listened for the address `0xEF00`. Other sources on the w
 The values for the commands can be taken from the table below.
 
 | Code | Action              |
+| ---- | ------------------- |
 |  0x0 | Increase brightness |
 |  0x1 | Decrease brightness |
 |  0x2 | Off                 |
