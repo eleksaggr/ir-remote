@@ -4,4 +4,4 @@ bin/
 generated.*.ld
 
 # Clang
-.clang-complete
+.clang_complete
